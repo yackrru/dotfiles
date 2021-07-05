@@ -1,0 +1,63 @@
+###################
+#
+# ALIASES
+#
+###################
+alias ls="gls --color=auto"
+alias la="ls -a"
+alias ll="ls -lh"
+alias composer='docker run --rm -it -v $PWD:/app -u $(id -u):$(id -g) composer'
+
+###################
+#
+# PATH
+#
+###################
+# for Homebrew
+export PATH="/usr/local/sbin:$PATH"
+# for GNU
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
+export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
+export MANPATH="/usr/local/opt/grep/libexec/gnuman:$MANPATH"
+# for anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+# for Java
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+export PATH="$JAVA_HOME/bin:$PATH"
+# for nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+# for pyenv
+export PYENV_ROOT="/usr/local/var/pyenv"
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+# for ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+# for golang
+eval "$(goenv init -)"
+export PATH="$GOPATH/bin:$PATH"
+# for psql
+export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
+# for yarn
+export PATH="$PATH:`yarn global bin`"
+# for home bin
+export PATH="$HOME/bin:$PATH"
+
+###################
+#
+# Others
+#
+###################
+# Git configure
+name="Toshihiro Takushima"
+export GIT_AUTHOR_NAME=$name
+export GIT_COMMITTER_NAME=$name
+export EMAIL="ttksm.git@gmail.com"
+source ~/.git-prompt.sh
