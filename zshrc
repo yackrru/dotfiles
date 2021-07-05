@@ -75,10 +75,9 @@ function custom_prompt {
   echo "${user}%n@%m${back_color}${path_b}${text_color}${name_b} ${dir}%~${reset}${text_color}${path_b}${reset} ${git_branch} \n${text_color}${arrow}> ${reset}"
 }
 
-PROMPT=`custom_prompt`
-
-function precmd() {
+precmd() {
   NEW_LINE_BEFORE_PROMPT=1
+  PROMPT=`custom_prompt`
 }
 
 # history
