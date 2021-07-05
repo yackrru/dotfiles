@@ -14,6 +14,7 @@ alias composer='docker run --rm -it -v $PWD:/app -u $(id -u):$(id -g) composer'
 #
 ###################
 # for Homebrew
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 # for GNU
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
