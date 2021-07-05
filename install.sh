@@ -2,7 +2,8 @@
 
 PATH="/opt/homebrew/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
-BREW_BIN=$(brew --prefix)/bin
+BREW_HOME=$(brew --prefix)
+BREW_BIN=$BREW_HOME/bin
 
 # SDKMAN
 if [ ! -d ~/.sdkman ]; then
@@ -22,7 +23,7 @@ if [ ! -d ~/.anyenv/envs/goenv ]; then
 fi
 
 # enable fzf
-/usr/local/opt/fzf/install --key-bindings --completion --no-update-rc
+$BREW_HOME/opt/fzf/install --key-bindings --completion --no-update-rc
 
 # Configure
 install commonrc ~/.commonrc
@@ -35,7 +36,7 @@ install -d ~/bin
 # git
 curl -sSL https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 chmod a+x ~/.git-prompt.sh
-install /usr/local/share/git-core/contrib/diff-highlight/diff-highlight ~/bin/diff-highlight
+install $BREW_HOME/share/git-core/contrib/diff-highlight/diff-highlight ~/bin/diff-highlight
 install gitattributes ~/.gitattributes
 install gitignore ~/.gitignore
 install gitconfig ~/.gitconfig
