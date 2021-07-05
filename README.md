@@ -5,9 +5,18 @@ Personal dotfiles for macOS.
 - [Homebrew](https://brew.sh/)
 
 ## Usage
+Clone repository.
 ```bash
 git clone https://github.com/ttksm/dotfiles.git
 cd dotfiles
+```
+Install brews.
+```bash
+brew bundle
+exec $SHELL -l
+```
+Run install.sh until you see the finish message like "Finish!".
+```bash
 ./install.sh
 ```
 
