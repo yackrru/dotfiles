@@ -9,7 +9,7 @@ if [ ! -d ~/.sdkman ]; then
 fi
 
 # anyenv
-if [ ! -d ~/.anyenv ]; then
+if [ ! -d ~/.config/anyenv ]; then
   $BREW_BIN/anyenv install --init
   exec $SHELL -l
 fi
