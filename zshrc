@@ -45,6 +45,8 @@ zstyle ':completion:*:descriptions' format '%BCompleting%b %U%d%u'
 fpath=(/path/to/homebrew/share/zsh-completions $fpath)
 autoload -U compinit
 compinit -u
+rm -f ~/.zcompdump
+compinit
 
 # case insensitive in completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
