@@ -31,3 +31,6 @@ Run install.sh until you see the finish message like "Finish!".
   - rbenv (Homebrew)
 - JVM
   - SDKMAN (Native)
+
+## Notes on gitconfig
+- The username and email address used at commit are defined as environment variables in commonrc.
