@@ -5,6 +5,82 @@ source ~/.commonrc
 autoload -U colors
 colors
 
+if [ "$TERM" = "screen" ];then
+  chpwd() {
+    echo -n "_`dir`\\"
+  }
+  preexec() {
+    emulate -L zsh
+    local -a cmd; cmd=(${(z)2})
+    case $cmd[1] in
+      fg)
+        if *1; then
+          cmd=(builtin jobs -l %+)
+        else
+          cmd=(builtin jobs -l $cmd[2])
+        fi
+        ;;
+      %*)
+        cmd=(builtin jobs -l $cmd[1])
+        ;;
+      cd)
+        if *2; then
+          cmd[1]=$cmd[2]
+        fi
+        ;;
+      *)
+        echo -n "k$cmd[1]:t\\"
+        return
+        ;;
+    esac
+
+    local -A jt; jt=(${(kv)jobtexts})
+
+    $cmd >>(read num rest
+      cmd=(${(z)${(e):-\$jt$num}})
+      echo -n "k$cmd[1]:t\\"
+    ) 2>/dev/null
+  }
+
+  chpwd
+fi
+
+export CLICOLOR=1
+
+function custom_prompt {
+  GIT_PS1_SHOWDIRTYSTATE=1
+  GIT_PS1_SHOWSTASHSTATE=1
+  #local git_branch="$(__git_ps1 "\033[36m[%s]\033[0m")"
+  local git_branch="$(__git_ps1 "\033[36m[%s]\033[0m")"
+
+  # user name text color
+  local name_t='179m%}' # user name background color
+  local name_b='236m%}'
+  # path text clolr
+  local path_t='255m%}'
+  # path background color
+  local path_b='031m%}'
+  # arrow color
+  local arrow='087m%}'
+  # set text color
+  local text_color='%{\e[38;5;'
+  # set background color
+  local back_color='%{\e[30;48;5;'
+  # reset
+  local reset='%{\e[0m%}'
+
+  local user="${back_color}${name_b}${text_color}${name_t}"
+  local dir="${back_color}${path_b}${text_color}${path_t}"
+
+  echo "${user}%n@%m${back_color}${path_b}${text_color}${name_b} ${dir}%~${reset}${text_color}${path_b}${reset} ${git_branch} \n${text_color}${arrow}> ${reset}"
+}
+
+PROMPT=`custom_prompt`
+
+function precmd() {
+  NEW_LINE_BEFORE_PROMPT=1
+}
+
 # history
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
