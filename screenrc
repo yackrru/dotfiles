@@ -1,0 +1,17 @@
+defutf8 on
+defencoding utf8
+encoding utf8 utf8
+startup_message off
+vbell off
+escape 
+defscrollback 10000
+termcapinfo xterm* ti@:te@
+altscreen on
+caption always "[%02c] ${USER} [%] | %-w%{= kR}%n %t%{-}%+w"
+shelltitle "% |$SHELL"
+shell zsh
+autodetach on
+defnonblock on
+nonblock on
+defbce on
+term xterm-256color
