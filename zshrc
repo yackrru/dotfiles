@@ -1,9 +1,6 @@
 # common
 source ~/.commonrc
 
-# git
-source ~/.git-completion.zsh
-
 # colors
 autoload -U colors
 colors

@@ -1,9 +1,6 @@
 # common
 source ~/.commonrc
 
-# git
-source ~/.git-completion.bash
-
 # prompt
 PS1_COLOR_BEGIN="\[\e[0;33m\]"
 PS1_COLOR_END="\[\e[m\]"
