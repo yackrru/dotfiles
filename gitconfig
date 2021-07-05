@@ -1,0 +1,53 @@
+[alias]
+	br = branch
+	co = checkout
+	fe = fetch -p
+	ls = ls-files
+	st = status -s -b
+	glog = !git vlog --graph
+	vlog = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative
+	skip = update-index --skip-worktree
+	noskip = update-index --no-skip-worktree
+
+[branch]
+	autosetuprebase = always
+
+[color]
+	ui = auto
+
+[core]
+	quotepath = false
+	editor = vim
+	autocrlfF = false
+	safecrlf = warn
+	attributesfile = ~/.gitattributes
+	excludesfile = ~/.gitignore
+
+[credential]
+	helper = cache --timeout 3600
+
+[diff]
+	indentHeuristic = true
+	tool = vimdiff
+[diff "exif"]
+	textconv = exiftool
+
+[difftool]
+	prompt = false
+
+[merge]
+	tool = vimdiff
+
+[mergetool]
+	prompt = false
+
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+
+[push]
+	default = simple
+
+[rerere]
+	enabled = true
