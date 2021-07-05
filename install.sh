@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+PATH="/opt/homebrew/bin:$PATH"
+PATH="/usr/local/bin:$PATH"
 BREW_BIN=$(brew --prefix)/bin
 
 # SDKMAN
