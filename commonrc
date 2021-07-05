@@ -16,16 +16,17 @@ alias composer='docker run --rm -it -v $PWD:/app -u $(id -u):$(id -g) composer'
 # for Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export BREW_HOME=$(brew --prefix)
 # for GNU
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
-export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
-export MANPATH="/usr/local/opt/grep/libexec/gnuman:$MANPATH"
+export PATH="$BREW_HOME/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$BREW_HOME/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$BREW_HOME/opt/findutils/libexec/gnubin:$PATH"
+export PATH="$BREW_HOME/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="$BREW_HOME/opt/grep/libexec/gnubin:$PATH"
+export MANPATH="$BREW_HOME/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH="$BREW_HOME/opt/findutils/libexec/gnuman:$MANPATH"
+export MANPATH="$BREW_HOME/opt/gnu-tar/libexec/gnuman:$MANPATH"
+export MANPATH="$BREW_HOME/opt/grep/libexec/gnuman:$MANPATH"
 # for anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
@@ -36,7 +37,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 # for nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 # for pyenv
-export PYENV_ROOT="/usr/local/var/pyenv"
+export PYENV_ROOT="$BREW_HOME/var/pyenv"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # for ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -45,7 +46,7 @@ eval "$(rbenv init -)"
 eval "$(goenv init -)"
 export PATH="$GOPATH/bin:$PATH"
 # for psql
-export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
+export PATH="$BREW_HOME/opt/postgresql@12/bin:$PATH"
 # for yarn
 export PATH="$PATH:`yarn global bin`"
 # for home bin
