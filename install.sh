@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+BREW_BIN=$(brew --prefix)/bin
 
 # SDKMAN
 if [ ! -d ~/.sdkman ]; then
@@ -9,11 +10,11 @@ fi
 
 # anyenv
 if [ ! -d ~/.anyenv ]; then
-  anyenv install --init
+  $BREW_BIN/anyenv install --init
   exec $SHELL -l
 fi
 if [ ! -d ~/.anyenv/envs/goenv ]; then
-  anyenv install goenv
+  $BREW_BIN/anyenv install goenv
   exec $SHELL -l
 fi
 
