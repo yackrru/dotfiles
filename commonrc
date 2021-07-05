@@ -3,7 +3,7 @@
 # ALIASES
 #
 ###################
-alias ls="gls --color=auto"
+#alias ls="gls --color=auto"
 alias la="ls -a"
 alias ll="ls -lh"
 alias composer='docker run --rm -it -v $PWD:/app -u $(id -u):$(id -g) composer'
