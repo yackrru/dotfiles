@@ -37,8 +37,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 # for nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 # for pyenv
-export PYENV_ROOT="$BREW_HOME/var/pyenv"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+eval "$(pyenv init -)"
 # for ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

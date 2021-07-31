@@ -15,6 +15,24 @@ Install brews.
 brew bundle
 exec $SHELL -l
 ```
+Initialize sdkman and anyenv.
+```bash
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+BREW_BIN=$(brew --prefix)/bin
+$BREW_BIN/anyenv install --init
+
+exec $SHELL -l
+```
+Set up anyenvs.
+```bash
+BREW_BIN=$(brew --prefix)/bin
+$BREW_BIN/anyenv install goenv
+$BREW_BIN/anyenv install pyenv
+
+exec $SHELL -l
+```
 Run install.sh until you see the finish message like "Finish!".
 ```bash
 ./install.sh
@@ -26,7 +44,7 @@ Run install.sh until you see the finish message like "Finish!".
 - Node.js
   - nodebrew (Homebrew)
 - Python
-  - pyenv (Homebrew)
+  - pyenv (anyenv)
 - Ruby
   - rbenv (Homebrew)
 - JVM

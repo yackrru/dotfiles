@@ -5,23 +5,6 @@ PATH="/usr/local/bin:$PATH"
 BREW_HOME=$(brew --prefix)
 BREW_BIN=$BREW_HOME/bin
 
-# SDKMAN
-if [ ! -d ~/.sdkman ]; then
-  curl -s "https://get.sdkman.io" | bash
-  source "$HOME/.sdkman/bin/sdkman-init.sh"
-  exec $SHELL -l
-fi
-
-# anyenv
-if [ ! -d ~/.config/anyenv ]; then
-  $BREW_BIN/anyenv install --init
-  exec $SHELL -l
-fi
-if [ ! -d ~/.anyenv/envs/goenv ]; then
-  $BREW_BIN/anyenv install goenv
-  exec $SHELL -l
-fi
-
 # enable fzf
 $BREW_HOME/opt/fzf/install --key-bindings --completion --no-update-rc
 
