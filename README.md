@@ -28,7 +28,6 @@ exec $SHELL -l
 Set up anyenvs.
 ```bash
 BREW_BIN=$(brew --prefix)/bin
-$BREW_BIN/anyenv install goenv
 $BREW_BIN/anyenv install pyenv
 
 exec $SHELL -l
@@ -40,7 +39,7 @@ Run install.sh until you see the finish message like "Finish!".
 
 ## Support programming language
 - Go
-  - goenv (anyenv)
+  - [Native installation](https://go.dev/dl/)
 - Node.js
   - nodebrew (Homebrew)
 - Python
