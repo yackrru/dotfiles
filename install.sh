@@ -23,6 +23,7 @@ install $BREW_HOME/share/git-core/contrib/diff-highlight/diff-highlight ~/bin/di
 install gitattributes ~/.gitattributes
 install gitignore ~/.gitignore
 install gitconfig ~/.gitconfig
+install gituser.sh ~/.gituser.sh
 
 # Restart shell
 echo -n -e "Finish install dotenvs!\n"

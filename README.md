@@ -51,4 +51,4 @@ Run install.sh until you see the finish message like "Finish!".
   - SDKMAN (Native)
 
 ## Notes on gitconfig
-- The username and email address used at commit are defined as environment variables in commonrc.
+- The username and email address that used at commit are defined as environment variables in `gituser.sh`.

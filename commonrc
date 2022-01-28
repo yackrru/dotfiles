@@ -56,9 +56,5 @@ export PATH="$HOME/bin:$PATH"
 # Others
 #
 ###################
-# Git configure
-name="Toshihiro Takushima"
-export GIT_AUTHOR_NAME=$name
-export GIT_COMMITTER_NAME=$name
-export EMAIL="ttksm.git@gmail.com"
+source ~/.gituser.sh
 source ~/.git-prompt.sh
