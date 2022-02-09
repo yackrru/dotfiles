@@ -43,6 +43,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 # for golang
 export PATH="/usr/local/go/bin:$PATH"
+export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 # for psql
 export PATH="$BREW_HOME/opt/postgresql@12/bin:$PATH"
