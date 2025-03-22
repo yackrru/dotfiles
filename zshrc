@@ -161,3 +161,9 @@ bindkey "^N" history-beginning-search-forward-end
 
 # Kubernetes
 source <(kubectl completion zsh)
+
+# asdf
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# direnv
+# eval "$(direnv hook zsh)"

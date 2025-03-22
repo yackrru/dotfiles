@@ -15,6 +15,7 @@ install bashrc ~/.bashrc
 install zshrc ~/.zshrc
 install screenrc ~/.screenrc
 install -d ~/bin
+# install .tool-versions ~/.tool-versions
 
 # git
 curl -sSL https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
