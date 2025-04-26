@@ -35,9 +35,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
 export PATH="$JAVA_HOME/bin:$PATH"
 # for nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-# for pyenv
-eval "$(pyenv init -)"
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
 # for ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -46,9 +44,7 @@ export PATH="/usr/local/go/bin:$PATH"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 # for psql
-export PATH="$BREW_HOME/opt/postgresql@12/bin:$PATH"
-# for yarn
-export PATH="$PATH:`yarn global bin`"
+export PATH="$BREW_HOME/opt/postgresql@15/bin:$PATH"
 # for home bin
 export PATH="$HOME/bin:$PATH"
 

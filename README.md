@@ -25,13 +25,6 @@ $BREW_BIN/anyenv install --init
 
 exec $SHELL -l
 ```
-Set up anyenvs.
-```bash
-BREW_BIN=$(brew --prefix)/bin
-$BREW_BIN/anyenv install pyenv
-
-exec $SHELL -l
-```
 Run install.sh until you see the finish message like "Finish!".
 ```bash
 ./install.sh
@@ -42,12 +35,10 @@ Run install.sh until you see the finish message like "Finish!".
   - [Native installation](https://go.dev/dl/)
 - Node.js
   - nodebrew (Homebrew)
-- Python
-  - pyenv (anyenv)
 - Ruby
   - rbenv (Homebrew)
 - JVM
   - SDKMAN (Native)
 
-## Notes on gitconfig
+## Notes on gitconfig (optional)
 - The username and email address that used at commit are defined as environment variables in `gituser.sh`.
